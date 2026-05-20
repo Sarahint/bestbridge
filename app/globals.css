@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand:       #1F5C9A;
+  --color-brand-light: #4FB8DD;
+  --color-brand-dark:  #143E6B;
+  --color-accent:      #E8A33D;
+  --color-ink:         #15233B;
+  --color-body:        #3a4a63;
+  --color-muted:       #6c7a92;
+  --color-line:        #e3e8f0;
+  --color-bg-soft:     #f5f8fc;
+  --color-bg-band:     #eef4fb;
+
+  --font-family-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+
+  --shadow-brand-sm: 0 1px 2px rgb(20 62 107 / 0.06), 0 1px 3px rgb(20 62 107 / 0.08);
+  --shadow-brand-md: 0 6px 18px rgb(20 62 107 / 0.08), 0 2px 6px rgb(20 62 107 / 0.06);
+  --shadow-brand-lg: 0 20px 40px rgb(20 62 107 / 0.12);
+}
+
+@layer base {
+  body {
+    font-size: 17px;
+    line-height: 1.65;
+    @apply text-body bg-white antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight leading-tight text-ink;
+    margin-bottom: 0.5em;
+  }
+
+  h1 { font-size: clamp(2rem, 4.2vw, 3.4rem); }
+  h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
+  h3 { @apply text-xl; }
+
+  p { margin-bottom: 1em; }
+
+  a {
+    @apply text-brand no-underline;
+    transition: color 0.15s ease;
+  }
+  a:hover { @apply text-brand-dark; }
+}
+
+@layer utilities {
+  .bb-container {
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 4vw, 36px);
+  }
+
+  .bb-section {
+    padding-block: clamp(56px, 8vw, 96px);
+  }
+
+  .bb-hero {
+    padding-block-start: clamp(72px, 9vw, 120px);
+    padding-block-end: clamp(64px, 8vw, 100px);
+  }
+
+  .hero-bg {
+    background:
+      radial-gradient(1100px 500px at 85% -20%, rgb(79 184 221 / 0.18), transparent 60%),
+      radial-gradient(900px 460px at -10% 110%, rgb(31 92 154 / 0.16), transparent 60%),
+      linear-gradient(180deg, #fbfdff 0%, #f4f8fd 100%);
+  }
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    @apply text-brand-light mb-3.5;
+  }
+}
