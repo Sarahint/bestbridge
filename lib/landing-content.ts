@@ -46,13 +46,6 @@ export type FaqItem = {
   answer: string;
 };
 
-export type Testimonial = {
-  quote: string;
-  author: string;
-  role: string;
-  initials: string;
-};
-
 export type ProcessStep = {
   number: string;
   title: string;
@@ -204,36 +197,6 @@ export const landingContent = {
             "Experience with both local and international companies. Notarization and legalization licenses on staff, so you don't need a second firm to certify documents for use abroad or with Thai government agencies.",
         },
       ] satisfies FeatureItem[],
-    },
-
-    testimonials: {
-      eyebrow: "What clients say",
-      heading: "Trusted by founders, HR teams and individuals",
-      description:
-        "BestBridge is new — these are early client snapshots. We're publishing more verified reviews as they come in. To leave a review, email info@bestbridge.cloud.",
-      items: [
-        {
-          quote:
-            "We needed two BOI work permits processed before a hard product launch. BestBridge had our paperwork submitted within a week and both engineers were on the ground a month later. The communication was unusually clear for a Thai consultancy.",
-          author: "Operations Lead",
-          role: "Series-A SaaS company",
-          initials: "OL",
-        },
-        {
-          quote:
-            "We hired BestBridge to redraft our Thai employment contracts and put together a compliant HR handbook. The deliverables were professional, the timeline held, and the price was a fraction of what the big law firms quoted us.",
-          author: "Founder & CEO",
-          role: "Bangkok F&B group",
-          initials: "FC",
-        },
-        {
-          quote:
-            "My retirement visa kept getting bounced back at immigration for the same paperwork issue. BestBridge sorted it on the first attempt and now handles my 90-day reports automatically. Worth every baht.",
-          author: "Retired expat",
-          role: "Chiang Mai resident",
-          initials: "RE",
-        },
-      ] satisfies Testimonial[],
     },
 
     aboutSplit: {
@@ -637,11 +600,6 @@ export const landingContent = {
         question: "Why not just do my own work permit / visa application?",
         answer:
           "You can — many people do. It works if your case is simple, your documents are clean, and you have time to queue at Immigration. We're worth hiring when (a) your case has complicating factors — non-standard income, prior overstays, missing documents, BOI nuances, (b) the cost of a rejected or delayed application is high — a hire that can't start, a launch slipping — or (c) you simply don't want to spend half a day at Chaeng Wattana.",
-      },
-      {
-        question: "What are your payment terms?",
-        answer:
-          "Standard engagements: 50% on signature, 50% on government filing. For ongoing HR or monthly retainers: invoiced monthly in arrears. We accept Thai bank transfer, international wire and credit card (with a 3% processing fee). Fixed pricing is the default — we'll quote hourly only for litigation work where the scope is genuinely unpredictable.",
       },
     ] satisfies FaqItem[],
 

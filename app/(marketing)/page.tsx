@@ -5,7 +5,6 @@ import { ServicesOverview } from "@/components/landing/services-overview";
 import { WhyUs } from "@/components/landing/why-us";
 import { AboutSplit } from "@/components/landing/about-split";
 import { CtaBand } from "@/components/landing/cta-band";
-import { Testimonials } from "@/components/landing/testimonials";
 import { JsonLd } from "@/components/seo/json-ld";
 import { websiteSchema } from "@/lib/seo/schemas";
 import { landingContent } from "@/lib/landing-content";
@@ -42,7 +41,6 @@ export default function HomePage() {
       <IntroSection content={home.intro} />
       <ServicesOverview content={home.servicesOverview} />
       <WhyUs content={home.whyUs} />
-      <Testimonials content={home.testimonials} />
       <AboutSplit content={home.aboutSplit} />
       <CtaBand content={home.ctaBand} />
     </>
