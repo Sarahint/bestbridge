@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="bg-brand-dark text-[#b8c9dd] pt-16 pb-6 text-[0.94rem]">
       <div className="bb-container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr] gap-10">
           <div>
             <div className="flex items-center gap-3 mb-3.5">
               <Image
@@ -48,6 +48,24 @@ export function Footer() {
                   <Link href={href} className="text-[#d9e6f3] hover:text-white">
                     {label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white text-[0.98rem] mb-3.5">Resources</h4>
+            <ul className="space-y-2 list-none p-0 m-0">
+              {footer.resources.map(({ href, label }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer external"
+                    className="text-[#d9e6f3] hover:text-white"
+                  >
+                    {label}
+                  </a>
                 </li>
               ))}
             </ul>

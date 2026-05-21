@@ -29,9 +29,6 @@ export function ServicesDetail({
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 sizes="(max-width: 768px) 100vw, 40vw"
-                {...(block.image.src.startsWith("http")
-                  ? { unoptimized: true }
-                  : {})}
               />
               <div
                 className="absolute inset-0 bg-gradient-to-br from-brand/18 to-brand-dark/28"

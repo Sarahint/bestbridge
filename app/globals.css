@@ -6,9 +6,10 @@
   --color-brand-dark:  #143E6B;
   --color-accent:      #E8A33D;
   --color-ink:         #15233B;
-  --color-body:        #3a4a63;
-  --color-muted:       #6c7a92;
+  --color-body:        #2f3e58;
+  --color-muted:       #5a6781;
   --color-line:        #e3e8f0;
+  --color-border:      #e3e8f0;
   --color-bg-soft:     #f5f8fc;
   --color-bg-band:     #eef4fb;
 
@@ -73,6 +74,9 @@
     text-transform: uppercase;
     letter-spacing: 0.14em;
     font-weight: 600;
-    @apply text-brand-light mb-3.5;
+    @apply text-brand mb-3.5;
   }
+
+  /* WCAG-strong focus ring for skip link & interactive elements */
+  .focus\:not-sr-only:focus { white-space: normal; }
 }
