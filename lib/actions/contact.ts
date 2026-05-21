@@ -33,10 +33,27 @@ export async function submitBooking(
     return { success: true };
   }
 
+  // Fail loudly + visibly in Railway logs if config is missing.
+  if (!process.env.RESEND_API_KEY) {
+    console.error(
+      "[contact] RESEND_API_KEY is not set. Add it in Railway → Variables."
+    );
+    return {
+      success: false,
+      error:
+        "Form is misconfigured (missing API key). Please email info@bestbridge.cloud directly.",
+    };
+  }
+
+  const fromAddress =
+    process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev";
+  const toAddress =
+    process.env.RESEND_TO_EMAIL ?? "info@bestbridge.cloud";
+
   try {
-    const { error } = await resend.emails.send({
-      from: process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev",
-      to: process.env.RESEND_TO_EMAIL ?? "info@bestbridge.cloud",
+    const { data: sent, error } = await resend.emails.send({
+      from: fromAddress,
+      to: toAddress,
       replyTo: email,
       subject: `New inquiry: ${service} — ${fullName}`,
       text: [
@@ -56,7 +73,11 @@ export async function submitBooking(
     });
 
     if (error) {
-      console.error("Resend error:", error);
+      // Resend returns { name, message, statusCode } on failure.
+      console.error(
+        "[contact] Resend rejected the send:",
+        JSON.stringify({ from: fromAddress, to: toAddress, error }, null, 2)
+      );
       return {
         success: false,
         error:
@@ -64,9 +85,10 @@ export async function submitBooking(
       };
     }
 
+    console.log("[contact] Sent OK:", sent?.id);
     return { success: true };
   } catch (err) {
-    console.error("Contact form error:", err);
+    console.error("[contact] Unexpected error sending email:", err);
     return {
       success: false,
       error:
