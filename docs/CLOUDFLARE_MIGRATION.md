@@ -1,7 +1,9 @@
 # Cloudflare Migration Plan — bestbridge.cloud
 
-> Move DNS, SSL, apex redirect, and email forwarding from SiteGround to the Cloudflare free tier.
-> Keep: domain registration at Namecheap, hosting at Railway, transactional email sending at Resend.
+> **Status: ✅ COMPLETED June 2026.** All phases executed. SiteGround and Railway decommissioned.
+> Final stack documented in [ARCHITECTURE.md](./ARCHITECTURE.md).
+>
+> _Original plan retained below for historical reference. Some details (e.g. Namecheap registrar, Railway hosting) describe the pre-migration state and no longer apply._
 
 ---
 

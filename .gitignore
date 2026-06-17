@@ -10,7 +10,7 @@
 .env.local
 .env.*.local
 
-# vercel / railway
+# vercel
 .vercel
 
 # cloudflare workers / opennext
