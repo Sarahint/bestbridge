@@ -9,6 +9,11 @@
   "compatibility_date": "2026-05-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
 
+  // Explicitly enable workers_dev subdomain + preview_urls (default behavior;
+  // silences the "not in your Wrangler file" warnings during deploys).
+  "workers_dev": true,
+  "preview_urls": true,
+
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",
