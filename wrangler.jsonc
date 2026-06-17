@@ -1,0 +1,28 @@
+/**
+ * Cloudflare Workers config for the OpenNext.js build.
+ * Docs: https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bestbridge",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-05-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+
+  "observability": {
+    "enabled": true
+  }
+
+  // Environment variables are configured in the Cloudflare dashboard:
+  //   - RESEND_API_KEY
+  //   - RESEND_FROM_EMAIL = noreply@bestbridge.cloud
+  //   - RESEND_TO_EMAIL   = info@bestbridge.cloud
+  //   - NEXT_PUBLIC_GTM_ID (optional)
+  //   - NEXT_PUBLIC_GA_ID  (optional)
+}

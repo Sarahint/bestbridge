@@ -67,7 +67,7 @@ export const localBusinessSchema = {
   "@id": `${SITE_URL}#localbusiness`,
   name: BUSINESS_NAME,
   url: SITE_URL,
-  image: `${SITE_URL}/opengraph-image`,
+  image: `${SITE_URL}/og-image.png`,
   logo: `${SITE_URL}/assets/logo.jpg`,
   email: BUSINESS_EMAIL,
   telephone: BUSINESS_PHONE,

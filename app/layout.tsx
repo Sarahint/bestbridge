@@ -62,12 +62,21 @@ export const metadata: Metadata = {
     title: "BestBridge Consultancy — Thailand Visas, HR & Legal Services",
     description:
       "Fast, reliable HR, Visa & Legal consulting for businesses and individuals in Thailand. BOI experts. English & Thai service.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "BestBridge Consultancy — Thailand Visas, HR & Legal Services",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "BestBridge Consultancy — Thailand Visas, HR & Legal Services",
     description:
       "Fast, reliable HR, Visa & Legal consulting for businesses and individuals in Thailand.",
+    images: ["/og-image.png"],
   },
   verification: {
     // TODO: replace with real Google Search Console verification token once obtained
